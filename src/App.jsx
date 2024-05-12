@@ -1,8 +1,11 @@
+import { Route, Routes } from "react-router-dom";
+import Auth from "./components/Auth/Auth";
+
 function App() {
   return (
-    <h1 className="container xl:max-w-screen-xl text-3xl font-bold  bg-primary-500 text-primary-900">
-      شروع پروژه
-    </h1>
+    <Routes>
+      <Route path="/auth" element={<Auth/>} />
+    </Routes>
   );
 }
 export default App;
