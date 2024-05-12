@@ -64,3 +64,7 @@ button:disabled {
   pointer-events: none;
   box-shadow: none;
 }
+
+label {
+  display: block;
+}
