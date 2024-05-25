@@ -11,7 +11,7 @@ function AppLayout() {
         <div className="mx-auto max-w-screen-md flex flex-col gap-y-3">
           <Outlet />
         </div>
-      </div>
+      </div> 
     </div>
   );
 }
