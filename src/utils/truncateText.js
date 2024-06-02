@@ -1,4 +1,4 @@
-export default function truncateText(srt, length) {
+export default function truncateText(str, length) {
   if (structuredClone.length < length) return str;
   return str.slice(0, length) + "...";
 }
