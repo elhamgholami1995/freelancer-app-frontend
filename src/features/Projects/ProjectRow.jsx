@@ -6,9 +6,11 @@ import toLocalDateShort from "../../utils/toLocalDateShort";
 import { HiOutlineTrash } from "react-icons/hi";
 import { TbPencilMinus } from "react-icons/tb";
 import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
 
 function ProjectRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   return (
     <Table.Row>
       <td>{index + 1}</td>
@@ -17,9 +19,9 @@ function ProjectRow({ project, index }) {
       <td>{toPersianNumbersWithComma(project.budget)}</td>
       <td>{toLocalDateShort(project.deadline)}</td>
       <td>
-        <div className="flex flex-wrap items-center gap-2 max-w-[200px]">
+        <div className="flex flex-wrap items-center gap-2 max-w-[100px]">
           {project.tags.map((tag) => (
-            <span className="badge badge-secondary" key={tag}>
+            <span className="badge badge--secondary" key={tag}>
               {tag}
             </span>
           ))}
@@ -28,26 +30,42 @@ function ProjectRow({ project, index }) {
       <td>{project.freelancer?.name || "-"}</td>
       <td>
         {project.status == "OPEN" ? (
-          <span className="badge badge--sucess">باز</span>
+          <span className="badge badge--success">باز</span>
         ) : (
           <span className="badge badge--danger">بسته</span>
         )}
       </td>
       <td>
         <div className="flex items-center gap-x-4">
-          <button onClick={() => setIsEditOpen(true)}>
-            <TbPencilMinus className=" w-5 h-5 text-primary-900" />
-          </button>
-          <Modal
-            open={isEditOpen}
-            title="modal title"
-            onClose={() => setIsEditOpen(false)}
-          >
-            this is modal
-          </Modal>
-          <button>
-            <HiOutlineTrash className="w-5 h-5 text-error" />
-          </button>
+          <>
+            <button onClick={() => setIsEditOpen(true)}>
+              <TbPencilMinus className=" w-5 h-5 text-primary-900" />
+            </button>
+            <Modal
+              open={isEditOpen}
+              title="modal title"
+              onClose={() => setIsEditOpen(false)}
+            >
+              this is modal
+            </Modal>
+          </>
+          <>
+            <button onClick={() => setIsDeleteOpen(true)}>
+              <HiOutlineTrash className="w-5 h-5 text-error" />
+            </button>
+            <Modal
+              open={isDeleteOpen}
+              title={`حذف ${project.title}`}
+              onClose={() => setIsDeleteOpen(false)}
+            >
+              <ConfirmDelete
+                resourceName={project.title}
+                onClose={() => setIsDeleteOpen(false)}
+                onConfirm={() => {}}
+                disabled={false}
+              />
+            </Modal>
+          </>
         </div>
       </td>
     </Table.Row>
