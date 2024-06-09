@@ -8,6 +8,7 @@ import { TbPencilMinus } from "react-icons/tb";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProject from "./useRemoveProject";
+import CreateProjectForm from "./CreateProjectForm";
 
 function ProjectRow({ project, index }) {
   const [isEditOpen, setIsEditOpen] = useState(false);
@@ -48,7 +49,7 @@ function ProjectRow({ project, index }) {
               title="modal title"
               onClose={() => setIsEditOpen(false)}
             >
-              this is modal
+              <p>this is edite...</p>
             </Modal>
           </>
           <>
