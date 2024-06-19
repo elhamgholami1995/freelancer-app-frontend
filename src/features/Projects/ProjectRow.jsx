@@ -49,7 +49,10 @@ function ProjectRow({ project, index }) {
               title="modal title"
               onClose={() => setIsEditOpen(false)}
             >
-              <p>this is edite...</p>
+              <CreateProjectForm
+                projectToEdit={project}
+                onClose={() => setIsEditOpen(false)}
+              />
             </Modal>
           </>
           <>
