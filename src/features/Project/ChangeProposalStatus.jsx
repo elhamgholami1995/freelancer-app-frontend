@@ -1,4 +1,3 @@
-import React from "react";
 import RHFSelect from "../../ui/RHFSelect";
 import Loading from "../../ui/Loading";
 import { useForm } from "react-hook-form";
@@ -22,10 +21,10 @@ const options = [
 ];
 
 export default function ChangeProposalStatus({ proposalId, onClose }) {
+  const { id: projectId } = useParams();
   const { register, handleSubmit } = useForm();
   const { isUpdating, changeProposalStatus } = useChangeProposalStatus();
   const queryClient = useQueryClient();
-  const { id: projectId } = useParams();
 
   const onSubmit = (data) => {
     console.log(data);

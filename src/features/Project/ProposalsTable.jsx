@@ -17,8 +17,8 @@ function ProposalsTable({ proposals }) {
         <th>عملیات</th>
       </Table.header>
       <Table.Body>
-        {projects.map((project, index) => (
-          <ProposalRow key={project._id} project={project} index={index} />
+        {proposals.map((proposal, index) => (
+          <ProposalRow key={proposal._id} proposal={proposal} index={index} />
         ))}
       </Table.Body>
     </Table>

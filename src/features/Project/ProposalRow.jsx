@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Table from "../../ui/Table";
 import truncateText from "../../utils/truncateText";
 import ChangeProposalStatus from "./ChangeProposalStatus";
+import Modal from "../../ui/Modal";
 
 const statusStyle = [
   {
@@ -20,11 +21,12 @@ const statusStyle = [
 
 function ProposalRow({ proposal, index }) {
   const { status, user } = proposal;
+  console.log(status);
   const [open, setOpen] = useState(false);
   return (
     <Table.Row>
       <td>{index + 1}</td>
-      <td>{proposal.user.name}</td>
+      <td>{user.name}</td>
       <td>
         <p>{truncateText(proposal.description, 50)}</p>
       </td>
@@ -39,7 +41,7 @@ function ProposalRow({ proposal, index }) {
         <Modal
           title="تغییر وضعیت درخواست"
           open={open}
-          onClose={() => setOpen(true)}
+          onClose={() => setOpen(false)}
         >
           <ChangeProposalStatus
             proposalId={proposal._id}
