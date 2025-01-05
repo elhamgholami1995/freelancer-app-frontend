@@ -37,7 +37,6 @@ function App() {
             <Route path="dashboard" element={<FreelancerDashboard />} />
             <Route path="proposals" element={<Proposals />} />
             <Route path="projects" element={<SubmitedProjects />} />
-            <Route path="dashboard" />
           </Route>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
