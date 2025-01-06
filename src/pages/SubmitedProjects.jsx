@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+
 
 function SubmitedProjects() {
   return (
-    <div>SubmitedProjects</div>
-  )
+    <div>
+     submited
+    </div>
+  );
 }
 
-export default SubmitedProjects
+export default SubmitedProjects;
