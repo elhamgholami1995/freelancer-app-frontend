@@ -29,7 +29,7 @@ export default function ChangeProposalStatus({ proposalId, onClose }) {
   const onSubmit = (data) => {
     console.log(data);
     changeProposalStatus(
-      { id: proposalId, data },
+      { proposalId, projectId, ...data },
       {
         onSuccess: () => {
           onClose();
