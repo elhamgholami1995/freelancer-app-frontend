@@ -14,7 +14,7 @@ export default function useCategories() {
   }));
   const transFormedCategories = rawCategories.map((item) => ({
     label: item.title,
-    value: item._englishTitle,
+    value: item.englishTitle,
   }));
   return { isLoading, categories, transFormedCategories };
 }
