@@ -39,7 +39,7 @@ function ProjectsHeader() {
         <FilterDropDown
           filterField="category"
           options={[
-            { value: "all", label: "دسته بندی (همه)" },
+            { value: "ALL", label: "دسته بندی (همه)" },
             ...transFormedCategories,
           ]}
         />

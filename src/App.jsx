@@ -22,6 +22,7 @@ function App() {
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <Toaster />
+        
 
         <Routes>
           <Route path="/Auth" element={<Auth />} />
