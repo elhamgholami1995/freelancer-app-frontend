@@ -15,6 +15,8 @@ import Proposals from "./pages/Proposals";
 import SubmitedProjects from "./pages/SubmitedProjects";
 import FreelancerLayout from "./features/freelancer/FreelancerLayout";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import AdminLayout from "./features/admin/AdminLayout";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,20 @@ function App() {
         <Routes>
           <Route path="/Auth" element={<Auth />} />
           <Route path="/complete-profile" element={<CompleteProfile />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="projects" element={<SubmitedProjects />} />
+            <Route path="proposals" element={<Proposals />} />
+            <Route path="projects" element={<SubmitedProjects />} />
+          </Route>
           <Route
             path="/owner"
             element={
