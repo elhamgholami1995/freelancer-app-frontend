@@ -1,4 +1,3 @@
-import React from "react";
 import {
   HiCollection,
   HiCurrencyDollar,
@@ -6,7 +5,7 @@ import {
 } from "react-icons/hi";
 import Stat from "../../ui/Stat";
 
-export default function Stats({ projects }) {
+export default function Stats({projects}) {
   const numOfProjects = projects.length;
   const numOfAcceptedProjects = projects.filter((p) => p.status == 2).length;
   const numOfProposals = projects.reduce(

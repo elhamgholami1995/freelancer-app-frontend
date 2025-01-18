@@ -21,7 +21,6 @@ const statusStyle = [
 
 function ProposalRow({ proposal, index }) {
   const { status, user } = proposal;
-  console.log(status);
   const [open, setOpen] = useState(false);
   return (
     <Table.Row>

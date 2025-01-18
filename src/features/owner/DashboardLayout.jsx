@@ -6,6 +6,8 @@ import DashboardHeader from "../../ui/DashboardHeader";
 
 function DashboardLayout() {
   const { isLoading, projects } = useOwnerProjects();
+
+
   if (isLoading) return <Loading />;
   return (
     <div>
