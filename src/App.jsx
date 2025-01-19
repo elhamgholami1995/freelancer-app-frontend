@@ -17,6 +17,7 @@ import FreelancerLayout from "./features/freelancer/FreelancerLayout";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
+import Users from "./pages/Users";
 
 const queryClient = new QueryClient();
 
@@ -38,7 +39,7 @@ function App() {
           >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<AdminDashboard />} />
-            <Route path="projects" element={<SubmitedProjects />} />
+            <Route path="users" element={<Users />} />
             <Route path="proposals" element={<Proposals />} />
             <Route path="projects" element={<SubmitedProjects />} />
           </Route>
