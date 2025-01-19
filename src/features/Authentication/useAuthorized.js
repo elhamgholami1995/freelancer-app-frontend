@@ -9,6 +9,8 @@ function useAuthorized() {
   if (user) isAuthenticated = true;
 
   let isAuthorized = false;
+  let isVerified = false;
+  if (user && Number(user.status) == 2) isVerified = true;
   const ROLES = { admin: "ADMIN", freelancer: "FREELANCER", owner: "OWNER" };
 
   const desiredRole = pathname.split("/").at(1);
@@ -16,7 +18,7 @@ function useAuthorized() {
     if (user && user.role == ROLES[desiredRole]) isAuthorized = true;
   }
 
-  return { isLoading, isAuthorized, isAuthenticated, user };
+  return { isLoading, isAuthorized, isAuthenticated, user, isVerified };
 }
 
 export default useAuthorized;
